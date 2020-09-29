@@ -64,7 +64,7 @@ function CountryList() {
                 
                 <select name="region" onChange={getRegion}>
                     
-                    {/* <option value='name' selected disabled >  Choose region  </option> */}
+                    <option value="none" selected disabled hidden>  Choose region  </option>
                     <option value='Africa'>  Africa  </option>
                     <option value='Americas'>Americas</option>
                     <option value='Asia'>    Asia    </option>

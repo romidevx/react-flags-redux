@@ -21,8 +21,6 @@ const reducer = (state, action) => {
       }
 
       case 'FILTER_COUNTRIES_BY_REGION':{
-
-        
         const newCountryFilteredByRegion = state.countryList.filter((country) => country.region === action.payload);
 
         console.log('filterByregion => ', action.payload);
@@ -32,14 +30,6 @@ const reducer = (state, action) => {
       }
 
       case 'FILTER_COUNTRIES_BY_NAME':{
-
-        let list;
-
-          if (state.filterByRegion !== '') {
-            list = state.coutryFilteredByRegion
-          } else {
-            list = state.countryList
-          }
 
         const countryListFilterByName = state.countryList.filter((country) => country.name.toLowerCase().includes(action.payload.toLowerCase()));
         
@@ -58,9 +48,11 @@ const reducer = (state, action) => {
     }
   }
 
+  const store = createStore(reducer,initialState);
+
  
 
-const store = createStore(reducer,initialState);
+export default store ;
 
-export default store;
+
 
